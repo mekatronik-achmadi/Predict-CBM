@@ -1,12 +1,10 @@
 # Testing For Vale
 
-**NOTE:** Everything done in offline both Guest and Host.
-
 ## Install Windows Server
 
 VM Specs:
 
-- RAM: 5376 MB
+- RAM: 10240 MB
 - Enable I/O APIC
 - CPU: 4
 - Enable PAE/NX
@@ -68,6 +66,10 @@ Install Sequences:
     - No Azure Instance 
 - AVEVA PI Vision 2023
     - Restart
-- PI Server 2018
+- PI Server 2018 (Get License)
+    - Online 
     - Select All
-    - Failed on License
+    
+
+## PI Server Licesense
+
