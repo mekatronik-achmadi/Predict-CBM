@@ -54,6 +54,8 @@ Manual config IPv4:
 
 ## PI System Install
 
+### Pre-requisites
+
 **Note:** Everything installed as **Administrator**.
 
 Install Sequences:
@@ -64,12 +66,38 @@ Install Sequences:
     - Download Media only
 - SQLEXPR_x64_ENU_2022
     - No Azure Instance 
-- AVEVA PI Vision 2023
-    - Restart
-- PI Server 2018 (Get License)
-    - Online 
-    - Select All
     
 
-## PI Server Licesense
+### PI Server
+
+Install PI Server 2018:
+    - Online 
+    - Select All
+
+Some license headache:
+- Got machine signature code (MSF) in Document or check from installer tooltips when asking **pilicense.dat**
+- Register Trial License (Using a company format email) [here](https://registrations.osisoft.com/s/redeemtrial)
+- Login to get exchange MSF with **pilicense.dat**
+
+### Authentification
+
+USERNAME: WIN-F04CA4DRVSA\<RoleThings>
+PASSWORD: Qwerty123
+
+### Install the Rest
+- PI Vision 2023
+- PI Web API 2023
+    - Connect to PI Server internally
+    - Restart
+    
+
+## Some Useful Server URLs
+
+Note: Requires setup SSL in Databases
+
+https://10.160.10.71/PIVision/
+https://10.160.10.71/PIVision/Admin/
+https://10.160.10.71/PIVision/Admin/Configuration/
+https://10.160.10.71/piwebapi
+https://10.160.10.71/pivision
 
