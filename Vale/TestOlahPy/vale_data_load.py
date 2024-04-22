@@ -27,5 +27,13 @@ class DataLoad():
         pprint(var_in.columns.tolist())
 
     def show_data_header(self,var_in,header_str):
-        pass
+        if not header_str:
+            print('Header String Empty')
+
+        if not isinstance(var_in, pandas.DataFrame):
+            print('Data input is not Panda DataFrame')
+            return
+
+        print('Value of %s:' % (header_str))
+        print(var_in[header_str])
 
