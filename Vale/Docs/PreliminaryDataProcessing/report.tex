@@ -1,0 +1,195 @@
+% ---
+% Packages
+% ---
+\documentclass[11pt,a4paper,twoside,onecolumn]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[strict]{changepage}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{fourier}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{layout}
+\usepackage{pifont}
+\usepackage{fontawesome}
+\usepackage{float}
+\usepackage{longtable}
+
+\definecolor{formalshade}{rgb}{0.95,0.95,1}
+
+\newenvironment{formalred}{%
+	\def\FrameCommand{%
+		\hspace{1pt}%
+		{\color{red}\vrule width 2pt}%
+		{\color{formalshade}\vrule width 4pt}%
+		\colorbox{formalshade}%
+	}%
+	\MakeFramed{\advance\hsize-\width\FrameRestore}%
+	\noindent\hspace{-4.55pt}% disable indenting first paragraph
+	\begin{adjustwidth}{}{7pt}%
+		\vspace{2pt}\vspace{2pt}%
+	}
+	{%
+		\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\newenvironment{formalblue}{%
+	\def\FrameCommand{%
+		\hspace{1pt}%
+		{\color{blue}\vrule width 2pt}%
+		{\color{formalshade}\vrule width 4pt}%
+		\colorbox{formalshade}%
+	}%
+	\MakeFramed{\advance\hsize-\width\FrameRestore}%
+	\noindent\hspace{-4.55pt}% disable indenting first paragraph
+	\begin{adjustwidth}{}{7pt}%
+		\vspace{2pt}\vspace{2pt}%
+	}
+	{%
+		\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\newenvironment{formalyellow}{%
+	\def\FrameCommand{%
+		\hspace{1pt}%
+		{\color{yellow}\vrule width 2pt}%
+		{\color{formalshade}\vrule width 4pt}%
+		\colorbox{formalshade}%
+	}%
+	\MakeFramed{\advance\hsize-\width\FrameRestore}%
+	\noindent\hspace{-4.55pt}% disable indenting first paragraph
+	\begin{adjustwidth}{}{7pt}%
+		\vspace{2pt}\vspace{2pt}%
+	}
+	{%
+		\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\geometry{
+	top=20mm,
+	bottom=25mm,
+	left=20mm,
+	right=20mm,
+	bindingoffset=15mm,	
+}
+
+% ---
+% PDF Information
+% ---
+\title{Preliminary Data Analysis}
+\author{ITS Team}
+
+% ---
+% Document Content
+% ---
+
+\begin{document}
+	
+	\maketitle
+	
+	\tableofcontents
+	\addcontentsline{toc}{chapter}{Contents}
+	
+	\listoffigures
+	\addcontentsline{toc}{chapter}{List of Figures}
+	
+	\listoftables
+	\addcontentsline{toc}{chapter}{List of Tables}
+	\newpage
+
+	\chapter*{Glosarium}
+	\addcontentsline{toc}{chapter}{Glosarium}
+	
+	This chapter provides definition of terms used in this report, which refers to relevant references such as articles or documentations.
+	
+		\begin{longtable}{p{0.35\textwidth} p{0.005\textwidth} p{0.55\textwidth}}
+			Planned shutdown & : &  Unit shutdown due to maintenance activity, either preventive (PV) or condition based-maintenance (CD)\\
+			Unplanned shutdown & : &  Unit shotdown due to total black out (TBO) or furnace grid backout (FBO), or other external factor (transmission line, CB, etc)\\
+			Planned maintenance optimization (PMO) & : & \\
+			
+			
+		\end{longtable}
+	
+	\chapter{Introduction}
+	In this chapter, the introduction of observed and analyzed plant (Larona site) will be provided. 
+	
+	\section{Load Operation}
+	There are three conditions of load operation.
+		\begin{enumerate}
+			\item Low Load : 10 MW
+			\item Normal Load : 40 - 45 MW
+			\item High Load : 55 - 60 MW
+		\end{enumerate}
+		
+	\section{Provided Preliminary Data}
+	The parameters that used as preliminary data (provided by PTVI) are listed below.
+		\begin{enumerate}
+			\item Mechanical parameter (total 10 parameters)
+			\begin{enumerate}
+				\item Speed 1 (\(RPM\))
+				\item Speed 2 (\(RPM\))
+				\item Wicked Gate Opening (\(\%\))
+				\item Penstock Pressure (\(kg/cm^2\))
+				\item Penstock Flow (\(Cumecs\))
+				\item Turbine Flow (\(Cumecs\))
+				\item Effeciency (\(Cumecs/MW\))
+				\item Upper Guide Bearing (UGB) displacement at X- and Y-axis (\(\mu m\))
+				\item Turbine Guide Bearing (UGB) displacement at X- and Y-axis (\(\mu m\))
+				\item Lower Guide Bearing (UGB) displacement at X- and Y-axis (\(\mu m\)) 
+			\end{enumerate}
+			
+			\item Electrical parameter (total 10 parameters)
+			\begin{enumerate}
+				\item Active power (\(MW\))
+				\item Reactive power (\(MVAr\))
+				\item Frequency (\(Hz\))
+				\item Excitation Voltage (\(V\))
+				\item Excitation Current (\(A\))
+				\item Voltage on Phase 1, 2, and 3 (\(V\))
+				\item Current on Phase 1, 2, and 3 (\(kA\))
+				\item Modbus MVAR
+				\item Modbus MVA
+				\item Power factor (\(Cos Phi\))
+				\item Stator winding temperature 13, 14, and 15 (\(^{\circ} C\))
+				\item Stator core temperature (\(^{\circ} C\))
+			\end{enumerate}
+			
+			\item Thermal and Hydrodynamic parameter (total 11 parameters)
+			\begin{enumerate}
+				\item UGB metal and oil temperature (\(^{\circ} C\))
+				\item LGB metal and oil temperature (\(^{\circ} C\))
+				\item Gen. air cooler water inlet temperature (\(^{\circ} C\))
+				\item Gen. air cooler air outlet temperature (\(^{\circ} C\))
+				\item Gen. cooler water flow (\(LPM\))
+				\item UGB cooler water flow (\(^{\circ} C\))
+				\item LGB cooler water flow (\(^{\circ} C\))
+				\item Lower canal level (\(msAL\))
+				\item TailRace level (\(msAL\))
+			\end{enumerate}
+			
+			\item Maintainablity and Availability parameter (total 2 parameters)
+			\begin{enumerate}
+				\item Planned and unplanned shutdown time and duration (\(h\))
+				\item Daily, monthly, and annually (physical) availability of system (\(\%\))
+			\end{enumerate}
+		\end{enumerate}
+		
+	\chapter{Data Analysis}
+	
+		\section{Planned and Unplanned Shutdown}
+		
+		\section{PMO Hydro Data}
+		
+		\section{Vibration Data}
+		
+		\section{Failure Mode and Effect Analysis}
+		
+		\section{Physical Availability}
+		
+		\section{Raw Data from PI System}
+		
+	\chapter{Discussion}
+	
+	\chapter{PI Implementation}
+	
+\end{document}
