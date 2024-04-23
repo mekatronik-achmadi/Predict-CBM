@@ -9,12 +9,19 @@ import pandas
 
 from matplotlib.figure import Figure
 
+## Data Analysis and Processing class
 class DataAnalysis():
 
+    ## Constructor
     def __init__(self):
         super(DataAnalysis, self).__init__()
 
+    ## Correlation Map generator
+    # @param var_in Pandas DataFrame
+    # @return Figure object
     def fig_map_corr(self,var_in):
+        """ Build Correlation Map Figure
+        """
         fig = Figure(figsize=(8,8),dpi=100)
         ax = fig.add_subplot(111)
         im = ax.matshow(var_in.corr())

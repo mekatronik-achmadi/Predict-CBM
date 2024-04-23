@@ -14,7 +14,7 @@ datlod = DataLoad()
 datlys = DataAnalysis()
 datgui = DataGui('Vale Data Example')
 
-data_lgs1 = datlod.from_xlxs('../OlahData/LGS_Overall_2017_2023_hourly.xlsx')
+data_lgs1 = datlod.from_xlsx('../OlahData/LGS_Overall_2017_2023_hourly.xlsx')
 
 datlod.summary_all(data_lgs1)
 datlod.summary_by_header(data_lgs1,'TimeStamp')

@@ -12,8 +12,12 @@ from ttkthemes import ThemedStyle
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 from matplotlib import style
 
+## GUI for Viewing and Control class
+# based on tkinter
 class DataGui():
 
+    ## Constructor
+    # @param title Main Windows title
     def __init__(self,title='Main Window'):
         super(DataGui, self).__init__()
 
@@ -26,6 +30,9 @@ class DataGui():
         theme = ThemedStyle(self.mainwind)
         theme.theme_use(self.strTheme)
 
+    ## Generic TextBox generator
+    # @param str_in String to show
+    # @param title Window title
     def show_textbox(self,str_in='Empty',title='TextBox'):
         txtwind = tkinter.Toplevel(self.mainwind)
         txtwind.geometry('400x400')
@@ -39,6 +46,9 @@ class DataGui():
 
         txt.insert(tkinter.END, str_in)
 
+    ## Generic GraphBox generator
+    # @param fig Matplotlib Figure object
+    # @param title Window title
     def show_graph(self,fig,title='GraphBox'):
         grpwind = tkinter.Toplevel(self.mainwind)
         grpwind.geometry('800x800')
@@ -56,6 +66,9 @@ class DataGui():
 
         graphfrm.pack()
 
+    ## Run Main Window
+    # Also run the Main Loop
+    # should called the last
     def run(self):
         self.mainwind.mainloop()
 
