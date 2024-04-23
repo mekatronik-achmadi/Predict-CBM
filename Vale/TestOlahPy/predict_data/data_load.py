@@ -28,7 +28,7 @@ class DataLoad():
         pd_xlsx.dropna(axis=0)
         pd_xlsx.dropna(axis=1)
 
-        return pd_xlxs
+        return pd_xlsx
 
     ## Get Header List string
     # @param var_in Pandas DataFrame

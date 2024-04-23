@@ -30,6 +30,20 @@ class DataGui():
         theme = ThemedStyle(self.mainwind)
         theme.theme_use(self.strTheme)
 
+        menubar = tkinter.Menu(self.mainwind)
+
+        menufile = tkinter.Menu(menubar,tearoff=0)
+        menufile.add_command(label='Open')
+        menufile.add_separator()
+        menufile.add_command(label='Exit')
+        menubar.add_cascade(label='File',menu=menufile)
+
+        menuhelp = tkinter.Menu(menubar,tearoff=0)
+        menuhelp.add_command(label='About')
+        menubar.add_cascade(label='Help',menu=menuhelp)
+
+        self.mainwind.config(menu=menubar)
+
     ## Generic TextBox generator
     # @param str_in String to show
     # @param title Window title
