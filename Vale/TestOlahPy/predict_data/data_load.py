@@ -8,6 +8,7 @@ __email__ = 'mekatronik.achmadi@gmail.com'
 import pandas
 
 class DataLoad():
+
     def __init__(self):
         super(DataLoad, self).__init__()
 

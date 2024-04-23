@@ -19,7 +19,6 @@ data_lgs1 = datlod.from_xlxs('../OlahData/LGS_Overall_2017_2023_hourly.xlsx')
 datlod.show_data(data_lgs1)
 datlod.show_data_header(data_lgs1,'TimeStamp')
 
-datlys.map_corr(data_lgs1)
-
+datgui.show_graph(datlys.fig_map_corr(data_lgs1))
 datgui.show_textbox(datlod.get_header(data_lgs1))
 datgui.show_all()

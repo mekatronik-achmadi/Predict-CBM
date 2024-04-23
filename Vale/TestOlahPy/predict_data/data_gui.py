@@ -9,6 +9,9 @@ import tkinter
 from tkinter import ttk, messagebox
 from ttkthemes import ThemedStyle
 
+from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
+from matplotlib import style
+
 class DataGui():
 
     def __init__(self):
@@ -27,6 +30,23 @@ class DataGui():
         txt.pack()
 
         txt.insert(tkinter.END, str_in)
+
+    def show_graph(self,fig,title='GraphBox'):
+        wind = tkinter.Tk()
+        wind.geometry('800x800')
+        wind.title(title)
+
+        theme = ThemedStyle(wind)
+        theme.theme_use(self.strTheme)
+
+        style.use('ggplot')
+        graphfrm = tkinter.Frame()
+
+        canvas = FigureCanvasTkAgg(fig,master=graphfrm)
+        canvas.draw()
+        canvas.get_tk_widget().pack()
+
+        graphfrm.pack()
 
     def show_all(self):
         tkinter.mainloop()
