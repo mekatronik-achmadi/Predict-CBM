@@ -6,7 +6,6 @@ __maintainer__ = 'Achmadi ST MT'
 __email__ = 'mekatronik.achmadi@gmail.com'
 
 import pandas
-from pprint import pprint
 
 class DataLoad():
     def __init__(self):
@@ -23,6 +22,13 @@ class DataLoad():
 
         return pd_xlxs
 
+    def get_header(self,var_in):
+        if not isinstance(var_in, pandas.DataFrame):
+            print('Data input is not Panda DataFrame')
+            return
+
+        return var_in.columns.tolist()
+
     def show_data(self,var_in):
         if not isinstance(var_in, pandas.DataFrame):
             print('Data input is not Panda DataFrame')
@@ -30,9 +36,6 @@ class DataLoad():
 
         print('Data Summary:')
         print(var_in)
-
-        print('Data Frame Header:')
-        pprint(var_in.columns.tolist())
 
     def show_data_header(self,var_in,header_str):
         if len(header_str)==0:

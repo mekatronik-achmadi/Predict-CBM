@@ -5,6 +5,7 @@ __credits__ = ['M. Ammar Assyraff ST MT', 'Aprianto D. Prasetyo ST MT']
 __maintainer__ = 'Achmadi ST MT'
 __email__ = 'mekatronik.achmadi@gmail.com'
 
+import pandas
 import matplotlib.pyplot as plt
 
 class DataAnalysis():
@@ -17,16 +18,17 @@ class DataAnalysis():
             print('Data input is not Panda DataFrame')
             return
 
-        fig = plt.figure(figsize=(40,30))
+        fig = plt.figure(figsize=(8,8))
         plt.matshow(var_in.corr(),fignum=fig.number)
         plt.xticks(range(var_in.select_dtypes(['number']).shape[1]),
                    var_in.select_dtypes(['number']).columns,
-                   fontsize=14,
-                   rotation=45)
+                   fontsize=6,
+                   rotation=90)
         plt.yticks(range(var_in.select_dtypes(['number']).shape[1]),
                    var_in.select_dtypes(['number']).columns,
-                   fontsize=14)
-        cbar = plt.Colorbar()
-        cbar.ax.tick_params(labelsize=14)
+                   fontsize=6)
+        cbar = plt.colorbar()
+        cbar.ax.tick_params(labelsize=6)
         plt.title('Correlation Matrix', fontsize=16)
+        plt.show()
 
