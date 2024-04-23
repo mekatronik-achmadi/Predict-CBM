@@ -14,33 +14,41 @@ from matplotlib import style
 
 class DataGui():
 
-    def __init__(self):
+    def __init__(self,title='Main Window'):
         super(DataGui, self).__init__()
+
         self.strTheme = 'elegance'
 
-    def show_textbox(self,str_in='Empty',title='TextBox',clr='yellow'):
-        wind = tkinter.Tk()
-        wind.geometry('400x400')
-        wind.title(title)
+        self.mainwind = tkinter.Tk()
+        self.mainwind.geometry('200x200')
+        self.mainwind.title(title)
 
-        theme = ThemedStyle(wind)
+        theme = ThemedStyle(self.mainwind)
         theme.theme_use(self.strTheme)
 
-        txt = tkinter.Text(wind,height=300,width=300,bg=clr)
+    def show_textbox(self,str_in='Empty',title='TextBox'):
+        txtwind = tkinter.Toplevel(self.mainwind)
+        txtwind.geometry('400x400')
+        txtwind.title(title)
+
+        theme = ThemedStyle(txtwind)
+        theme.theme_use(self.strTheme)
+
+        txt = tkinter.Text(txtwind,height=300,width=300)
         txt.pack()
 
         txt.insert(tkinter.END, str_in)
 
     def show_graph(self,fig,title='GraphBox'):
-        wind = tkinter.Tk()
-        wind.geometry('800x800')
-        wind.title(title)
+        grpwind = tkinter.Toplevel(self.mainwind)
+        grpwind.geometry('800x800')
+        grpwind.title(title)
 
-        theme = ThemedStyle(wind)
+        theme = ThemedStyle(grpwind)
         theme.theme_use(self.strTheme)
 
         style.use('ggplot')
-        graphfrm = tkinter.Frame()
+        graphfrm = ttk.Frame(grpwind)
 
         canvas = FigureCanvasTkAgg(fig,master=graphfrm)
         canvas.draw()
@@ -48,6 +56,6 @@ class DataGui():
 
         graphfrm.pack()
 
-    def show_all(self):
-        tkinter.mainloop()
+    def run(self):
+        self.mainwind.mainloop()
 

@@ -17,7 +17,7 @@ class DataAnalysis():
     def fig_map_corr(self,var_in):
         fig = Figure(figsize=(8,8),dpi=100)
         ax = fig.add_subplot(111)
-        ax.matshow(var_in.corr())
+        im = ax.matshow(var_in.corr())
         ax.set_xticks(range(var_in.select_dtypes(['number']).shape[1]),
                    var_in.select_dtypes(['number']).columns,
                    fontsize=6,
@@ -25,9 +25,7 @@ class DataAnalysis():
         ax.set_yticks(range(var_in.select_dtypes(['number']).shape[1]),
                    var_in.select_dtypes(['number']).columns,
                    fontsize=6)
-        #cbar = ax.colorbar()
-        #cbar.ax.tick_params(labelsize=6)
-        ax.set_title('Correlation Matrix', fontsize=16)
+        fig.colorbar(im,orientation='vertical')
 
         return fig
 

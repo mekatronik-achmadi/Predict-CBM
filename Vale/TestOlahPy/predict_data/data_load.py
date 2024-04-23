@@ -28,9 +28,11 @@ class DataLoad():
             print('Data input is not Panda DataFrame')
             return
 
-        return var_in.columns.tolist()
+        collist = var_in.columns.tolist()
+        strlist = ''.join(str(element)+'\n' for element in collist)
+        return strlist
 
-    def show_data(self,var_in):
+    def summary_all(self,var_in):
         if not isinstance(var_in, pandas.DataFrame):
             print('Data input is not Panda DataFrame')
             return
@@ -38,7 +40,7 @@ class DataLoad():
         print('Data Summary:')
         print(var_in)
 
-    def show_data_header(self,var_in,header_str):
+    def summary_by_header(self,var_in,header_str):
         if len(header_str)==0:
             print('Header String Empty')
 
