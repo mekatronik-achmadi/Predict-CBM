@@ -33,13 +33,13 @@ class DataGui():
         menubar = tkinter.Menu(self.mainwind)
 
         menufile = tkinter.Menu(menubar,tearoff=0)
-        menufile.add_command(label='Open')
+        menufile.add_command(label='Memory',command=None)
         menufile.add_separator()
-        menufile.add_command(label='Exit')
+        menufile.add_command(label='Exit',command=self.mainwind.quit)
         menubar.add_cascade(label='File',menu=menufile)
 
         menuhelp = tkinter.Menu(menubar,tearoff=0)
-        menuhelp.add_command(label='About')
+        menuhelp.add_command(label='Author',command=self.author)
         menubar.add_cascade(label='Help',menu=menuhelp)
 
         self.mainwind.config(menu=menubar)
@@ -86,3 +86,11 @@ class DataGui():
     def run(self):
         self.mainwind.mainloop()
 
+    ## Close Main Window
+    def exit(self):
+        self.mainwind.destroy()
+
+    def author(self):
+        str_author = 'Achmadi ST MT\nM. Ammar Assyraff ST MT\nAprianto D. Prasetyo ST MT'
+
+        tkinter.messagebox.showinfo(title='Author',message=str_author)
