@@ -16,6 +16,8 @@ datgui = DataGui('Vale Data Example')
 
 data_lgs1 = datlod.from_xlsx('../OlahData/LGS_Overall_2017_2023_hourly.xlsx')
 
+print(datlod.webapi_json('./piwebapi.json'))
+
 datlod.summary_all(data_lgs1)
 datlod.summary_by_header(data_lgs1,'TimeStamp')
 

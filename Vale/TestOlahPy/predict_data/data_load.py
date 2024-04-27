@@ -5,6 +5,7 @@ __credits__ = ['M. Ammar Assyraff ST MT', 'Aprianto D. Prasetyo ST MT']
 __maintainer__ = 'Achmadi ST MT'
 __email__ = 'mekatronik.achmadi@gmail.com'
 
+import json
 import pandas
 
 ## Data Loading and Pre-Processing class
@@ -29,6 +30,16 @@ class DataLoad():
         pd_xlsx.dropna(axis=1)
 
         return pd_xlsx
+
+    ## JSON WebAPI Loading
+    # @param string JSON File Text
+    def webapi_json(self,json_file):
+        with open(json_file) as f:
+            json_str = f.read()
+
+        json_dict = json.loads(json_str)
+
+        return json_dict
 
     ## Get Header List string
     # @param var_in Pandas DataFrame

@@ -1,0 +1,9 @@
+{
+  "Links": {
+    "Self": "https://10.160.10.71/piwebapi/",
+    "AssetServers": "https://10.160.10.71/piwebapi/assetservers",
+    "DataServers": "https://10.160.10.71/piwebapi/dataservers",
+    "Omf": "https://10.160.10.71/piwebapi/omf",
+    "System": "https://10.160.10.71/piwebapi/system"
+  }
+}
