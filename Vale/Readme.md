@@ -55,7 +55,7 @@ Task List:
     - [ ] Generic Statistics
     - [ ] Generic Neural Network
     - [ ] Other Options
-- [ ] Orbital Analysis
+- [x] Orbital Analysis
 
 Additional Task:
 - [x] PDF/LaTeX Documentation
