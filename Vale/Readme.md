@@ -6,7 +6,7 @@ Still in Early Works
 
 ## Requirement Breakdown
 
-The development has two large part:
+The development has three large part:
 - [Source Tree Management](#source-tree-management)
 - [PI System Intergration](#pi-system-intergration)
 - [Data Analysis and Prediction](#data-analysis-and-prediction)
@@ -22,6 +22,10 @@ Task List:
     - [ ] Integrate PI System
     - [ ] Integrate Data Analysis
     - [ ] Packaging/Deployment
+        - [ ] Windows requirements
+        - [ ] Self Contained Image
+        - [ ] Self Extraction (NSIS)
+        - [ ] Other Options
 - [x] Main Repository Maintainer
 
 Maintainer: Achmadi, ST MT
@@ -43,6 +47,14 @@ Maintainer: Apriyanto Dwi Prasetyo, ST
 ### Data Analysis and Prediction
 
 Task List:
+- [ ] Variable Identification
+    - [ ] Listing/Collecting
+    - [ ] Classification
+- [ ] Modeling
+    - [ ] Variable Based
+    - [ ] Generic Statistics
+    - [ ] Generic Neural Network
+    - [ ] Other Options
 - [ ] Orbital Analysis
 
 Additional Task:
