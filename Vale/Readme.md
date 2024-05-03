@@ -33,13 +33,13 @@ Maintainer: Achmadi, ST MT
 ### PI System Intergration
 
 Task List:
-- [ ] API Connector/Interop
-    - [ ] PIConnect (Python)
-    - [ ] PI-SDK (dotNET C/C++)
-    - [ ] Web/REST API
+- [x] Testing API Connector/Interop
+    - [x] PI-SDK Via Python
+    - [x] Web/REST API
+    - [ ] Wrapping Up
 - [ ] API Listing
 - [ ] Reading/Streaming 
-    - [ ] Testing
+    - [x] Testing
     - [ ] Large Buffering
     
 Maintainer: Apriyanto Dwi Prasetyo, ST 
