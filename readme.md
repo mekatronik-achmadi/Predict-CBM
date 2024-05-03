@@ -4,4 +4,6 @@ This repository hold examples and works on Prediction and Condition-Based Monito
 
 Here a non-exhaustive list currently and past works:
 
-- Vale
+- PT Vale Indonesia
+    + Maintenance/Utilities
+    + PI System
