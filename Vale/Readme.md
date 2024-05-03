@@ -39,7 +39,8 @@ Task List:
     - [ ] Wrapping Up
 - [ ] API Listing
 - [ ] Reading/Streaming 
-    - [x] Testing
+    - [x] Testing Reading / Writing
+    - [ ] Real-time Streaming
     - [ ] Large Buffering
     
 Maintainer: Apriyanto Dwi Prasetyo, ST 
