@@ -33,9 +33,13 @@ Maintainer: Achmadi, ST MT
 ### PI System Intergration
 
 Task List:
-- [x] Testing API Connector/Interop
+- [ ] Testing API Connector/Interop
     - [x] PI-SDK Via Python
+        - [x] Insert Pre-Given Data
     - [x] Web/REST API
+        - [x] API Search Query
+        - [x] Read/Write Attribute
+        - [x] Read/Write PI Point
     - [ ] Wrapping Up
 - [ ] API Listing
 - [ ] Reading/Streaming 
