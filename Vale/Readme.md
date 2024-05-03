@@ -22,7 +22,7 @@ Task List:
     - [ ] Integrate PI System
     - [ ] Integrate Data Analysis
     - [ ] Packaging/Deployment
-- [ ] Main Repository Maintainer
+- [x] Main Repository Maintainer
 
 Maintainer: Achmadi, ST MT
 
@@ -36,8 +36,7 @@ Task List:
 - [ ] API Listing
 - [ ] Reading/Streaming 
     - [ ] Testing
-    - [ ] Developing
-    - [ ] Ready To Use
+    - [ ] Large Buffering
     
 Maintainer: Apriyanto Dwi Prasetyo, ST 
 
