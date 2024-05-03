@@ -14,3 +14,5 @@
 
 ## Try Example Model Classifier
 - [ ] [Anomaly Detection Using a Variational Autoencoder](https://medium.com/@luc.frachon/anomaly-detection-using-a-variational-autoencoder-part-ii-beeb30f0d88f)
+- [ ] [Variational Recurrent Autoencoder for timeseries clustering in pytorch](https://github.com/tejaslodaya/timeseries-clustering-vae)
+- [ ] [StackVAE-G for Time Series Anomaly Detection](https://github.com/liwk16/StackVAE)
