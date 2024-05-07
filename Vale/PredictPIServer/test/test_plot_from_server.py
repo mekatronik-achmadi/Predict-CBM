@@ -14,6 +14,8 @@ from ValePredictPI.vale_connect import ValeConnect
 
 class TestValeMain():
     def __init__(self):
+        super(TestValeMain, self).__init__()
+
         self.server_root = '142.40.33.208'
 
         self.server_base = 'pti-pi'
@@ -22,7 +24,7 @@ class TestValeMain():
         self.conn = ValeConnect(self.server_root,self.server_base)
 
         self.x_tag_wid = self.conn.get_webid_point(self.x_tag)
-        self.value_array = self.conn.get_stream_rec_json_value(self.x_tag_wid)
+        self.value_array = self.conn.get_stream_rec_value(self.x_tag_wid)
 
         print(self.value_array)
         print(f"Retrieved Array {self.value_array.shape}")

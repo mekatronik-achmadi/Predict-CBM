@@ -1,4 +1,4 @@
-json
+numpy
 urllib3
 requests
 

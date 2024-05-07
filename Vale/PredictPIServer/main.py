@@ -1,11 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from ValePredictPI.vale_connect import ValeConnect
-
 class ValeMain():
     def __init__(self):
-        pass
+        super(ValeMain, self).__init__()
 
 if __name__ == "__main__":
     vale = ValeMain()
