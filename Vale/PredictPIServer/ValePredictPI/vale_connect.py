@@ -89,6 +89,7 @@ class ValeConnect():
 
         j = 0
         for i in val_list:
+            # note the Z is parsing directive to %z as it is identifier to UTC timezone
             val_new = {i.get('Timestamp'):i.get('Value')}
             val_dict.update(val_new)
             j = j + 1
