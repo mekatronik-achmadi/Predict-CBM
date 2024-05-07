@@ -4,7 +4,7 @@
 import sys
 sys.path.append('../')
 
-import pandas
+import time
 
 from ValePredictPI.vale_connect import ValeConnect
 
@@ -18,6 +18,8 @@ class TestValeAPI():
         self.server_base = 'pti-pi'
         self.x_tag = ['U-LGS1-GB-X-PK-PK-70-AI','U-LGS1-LGB-Y-PK-PK-340-AI','U-LGS1-TGB-X-PK-PK-270-AI','U-LGS1-TGB-Y-PK-PK-340-AI','U-LGS1-UGB-X-PK-PK-70-AI','U-LGS1-UGB-Y-PK-PK-340-AI']
 
+        t = time.time()
+
         self.conn = ValeConnect(self.server_root,self.server_base)
 
         for i in self.x_tag:
@@ -27,6 +29,9 @@ class TestValeAPI():
             print(value_resp)
             print(type(value_resp['Timestamps'][1]))
             print(type(value_resp['Values'][1]))
+
+        elapsed = time.time() - t
+        print(elapsed)
 
 if __name__ == "__main__":
     vale = TestValeAPI()

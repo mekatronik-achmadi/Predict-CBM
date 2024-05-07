@@ -11,7 +11,10 @@ Pointing to same Addreess:
 
 Streaming Example:
 
+- https://142.40.33.208/piwebapi/streams/F1DPHCUkIuz-VUGmPsx8gYVengkEQAAAUFRJLVBJXFUtTEdTMS1HQi1YLVBLLVBLLTcwLUFJ/recorded?selectedFields=Items.Timestamp;Items.Value
+
 - https://142.40.33.208/piwebapi/streams/F1DPHCUkIuz-VUGmPsx8gYVengkEQAAAUFRJLVBJXFUtTEdTMS1HQi1YLVBLLVBLLTcwLUFJ/recorded?startTime=2022-03-18T09:54:52Z&endTime=2022-03-20T09:54:52Z&selectedFields=Items.Timestamp;Items.Value
+
 - https://142.40.33.208/piwebapi/streams/F1DPHCUkIuz-VUGmPsx8gYVengkEQAAAUFRJLVBJXFUtTEdTMS1HQi1YLVBLLVBLLTcwLUFJ/interpolated?startTime=2022-01-18T09:54:52Z&endTime=2022-01-19T09:54:52Z&interval=10s&selectedFields=Items.Timestamp;Items.Value
 
 
@@ -19,3 +22,4 @@ Streaming Example:
 
 - Software Analysis -> VibroSight Vision
 - AVD (Azzure Virtual Desktop)
+- Estimasi Data Paling Awal -> 21-11-2018 08:53
