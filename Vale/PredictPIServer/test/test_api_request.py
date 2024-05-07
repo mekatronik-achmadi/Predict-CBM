@@ -21,12 +21,9 @@ class TestValeAPI():
         self.conn = ValeConnect(self.server_root,self.server_base)
 
         self.x_tag_wid = self.conn.get_webid_point(self.x_tag)
-        self.value_resp = self.conn.get_stream_rec_valuetime(self.x_tag_wid)
+        self.value_resp = self.conn.get_stream_rec_valuetime_pd(self.x_tag_wid)
 
-        # convert timestamps to pandas
-        df = pandas.DataFrame(list(self.value_resp.items()), columns=['Timestamps', 'Values'])
-        print(df)
-        print(type(df))
+        print(type(self.value_resp['Timestamps'][0]))
 
 if __name__ == "__main__":
     vale = TestValeAPI()

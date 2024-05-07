@@ -18,3 +18,4 @@ Streaming Example:
 ## Notes
 
 - Software Analysis -> VibroSight Vision
+- AVD (Azzure Virtual Desktop)

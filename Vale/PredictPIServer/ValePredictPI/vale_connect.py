@@ -2,7 +2,10 @@
 
 import requests
 import urllib3
+import pandas
 import numpy
+
+from datetime import datetime
 
 ## PIWebAPI request and Data Loading
 class ValeConnect():
@@ -62,8 +65,8 @@ class ValeConnect():
 
     ## Get TimeStamp Value record from PI Server on specified Web Id
     # @param string Wed Id
-    # @return dict Two-dimensional of timestamps and values
-    def get_stream_rec_valuetime(self,web_id):
+    # @return dict Two-dimensional of timestamps (string) and values (float)
+    def get_stream_rec_valuetime_dict(self,web_id):
         url = f'{self.SERV_PATH}/streams/{web_id}/recorded?selectedFields=Items.Timestamp;Items.Value'
         val_list = self.api_get_request(url,'Items')
         val_dict = {}
@@ -75,3 +78,21 @@ class ValeConnect():
             j = j + 1
 
         return val_dict
+
+    ## Get TimeStamp Value record from PI Server on specified Web Id
+    # @param string Wed Id
+    # @return pandas Two-dimensional of timestamps (time object) and values (float)
+    def get_stream_rec_valuetime_pd(self,web_id):
+        url = f'{self.SERV_PATH}/streams/{web_id}/recorded?selectedFields=Items.Timestamp;Items.Value'
+        val_list = self.api_get_request(url,'Items')
+        val_dict = {}
+
+        j = 0
+        for i in val_list:
+            val_time = datetime.strptime(i.get('Timestamp'),'%Y-%m-%dT%H:%M:%S.%fZ')
+            val_new = {val_time:i.get('Value')}
+            val_dict.update(val_new)
+            j = j + 1
+
+        val_df = pandas.DataFrame(list(self.value_resp.items()), columns=['Timestamps', 'Values'])
+        return val_df
