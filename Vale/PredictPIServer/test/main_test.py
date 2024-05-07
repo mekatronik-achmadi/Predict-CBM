@@ -1,16 +1,18 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 from threading import Thread as thd
 from time import sleep
 
+import sys
+sys.path.append('../')
+
 from ValePredictPI.vale_connect import ValeConnect
 
-class ValeMain():
+class TestValeMain():
     def __init__(self):
         self.server_root = '142.40.33.208'
 
@@ -48,4 +50,4 @@ class ValeMain():
             sleep(1)
 
 if __name__ == "__main__":
-    vale = ValeMain()
+    vale = TestValeMain()
