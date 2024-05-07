@@ -10,7 +10,15 @@ Here brief directories descriptions (in alphabetic order):
 - [DataGUI](https://github.com/mekatronik-achmadi/Predict-CBM/tree/main/Vale/DataGUI): A GUI Prototype. The developement generally has been stopped
 - [Docs](https://github.com/mekatronik-achmadi/Predict-CBM/tree/main/Vale/Docs): General Documentation. Updated as the project is on going.
 - [Forecasting_Classifier_NN](https://github.com/mekatronik-achmadi/Predict-CBM/tree/main/Vale/Forecasting_Classifier_NN): Early work of Neural Network implementation. Maybe updated as the project is on going.
-- [PISystem]()
+- [PIWebAPI_PISDK](https://github.com/mekatronik-achmadi/Predict-CBM/tree/main/Vale/PIWebAPI_PISDK): Testing and Notes about connecting to PI-System. It will be integrated to main project directory.
+- [PredictPIServer](https://github.com/mekatronik-achmadi/Predict-CBM/tree/main/Vale/PredictPIServer): Main Implementation project. First Priority as the development on going.
+- [TestOlahPy](https://github.com/mekatronik-achmadi/Predict-CBM/tree/main/Vale/TestOlahPy): Testing and Notes about Data Analysis. It will be integrated to main project directory.
+
+## Documentation
+
+Here main documentation:
+- [Deployment]
+- [Framework API]
 
 ## Requirement Breakdown
 
