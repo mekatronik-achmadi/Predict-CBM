@@ -2,7 +2,15 @@
 
 ## Development Status
 
-Still in Early Works
+Still in very early works.
+
+## Directories Descriptions
+
+Here brief directories descriptions (in alphabetic order):
+- [DataGUI](https://github.com/mekatronik-achmadi/Predict-CBM/tree/main/Vale/DataGUI): A GUI Prototype. The developement generally has been stopped
+- [Docs](https://github.com/mekatronik-achmadi/Predict-CBM/tree/main/Vale/Docs): General Documentation. Updated as the project is on going.
+- [Forecasting_Classifier_NN](https://github.com/mekatronik-achmadi/Predict-CBM/tree/main/Vale/Forecasting_Classifier_NN): Early work of Neural Network implementation. Maybe updated as the project is on going.
+- [PISystem]()
 
 ## Requirement Breakdown
 
