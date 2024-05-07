@@ -33,9 +33,13 @@ The development has three large part:
 
 Task List:
 - [x] Markdown Documentation
-- [x] In-Code Doxygen Documentation
+    - [ ] Deployment
+    - [ ] Framework API
+- [ ] In-Code Doxygen Documentation
 - [ ] Python Class/Framework
-    - [ ] Integrate PI System
+    - [x] Integrate PI System
+        - [x] Local PIWebAPI 
+        - [ ] Azzure PIWebAPI
     - [ ] Integrate Data Analysis
     - [ ] Packaging/Deployment
         - [ ] Windows requirements
