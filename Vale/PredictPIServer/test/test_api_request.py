@@ -23,7 +23,9 @@ class TestValeAPI():
         self.x_tag_wid = self.conn.get_webid_point(self.x_tag)
         self.value_resp = self.conn.get_stream_rec_valuetime_pd(self.x_tag_wid)
 
-        print(type(self.value_resp['Timestamps'][0]))
+        print(self.value_resp)
+        print(type(self.value_resp['Timestamps'][1]))
+        print(type(self.value_resp['Values'][1]))
 
 if __name__ == "__main__":
     vale = TestValeAPI()
