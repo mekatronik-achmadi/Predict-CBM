@@ -17,8 +17,10 @@ Here brief directories descriptions (in alphabetic order):
 ## Documentation
 
 Here main documentation:
-- [Deployment]()
-- [Framework API]()
+
+- [Deployment](https://github.com/mekatronik-achmadi/Predict-CBM/blob/main/Vale/PredictPIServer/deployment.md)
+- [Framework API](https://github.com/mekatronik-achmadi/Predict-CBM/blob/main/Vale/PredictPIServer/python_api.md)
+- [Server Access](https://github.com/mekatronik-achmadi/Predict-CBM/blob/main/Vale/PredictPIServer/server_access.md)
 
 ## Requirement Breakdown
 
@@ -38,7 +40,7 @@ Task List:
 - [ ] In-Code Doxygen Documentation
 - [ ] Python Class/Framework
     - [x] Integrate PI System
-        - [x] Local PIWebAPI 
+        - [x] Local PIWebAPI
         - [ ] Azzure PIWebAPI
     - [ ] Integrate Data Analysis
     - [ ] Packaging/Deployment
@@ -62,12 +64,12 @@ Task List:
         - [x] Read/Write PI Point
     - [ ] Wrapping Up
 - [ ] API Listing
-- [ ] Reading/Streaming 
+- [ ] Reading/Streaming
     - [x] Testing Reading / Writing
     - [ ] Real-time Streaming
     - [ ] Large Buffering
-    
-Maintainer: Apriyanto Dwi Prasetyo, ST 
+
+Maintainer: Apriyanto Dwi Prasetyo, ST
 
 ### Data Analysis and Prediction
 
