@@ -9,6 +9,9 @@ class Ui_Main(object):
     def initUi(self,ValeGui):
         ValeGui.setObjectName('Main Gui')
         ValeGui.resize(1024,600)
+        self.centralWidget = QtWidgets.QWidget(parent=ValeGui)
+        self.centralWidget.setObjectName("centralWidget")
+
         QtCore.QMetaObject.connectSlotsByName(ValeGui)
 
 class ValeGui(QMainWindow,Ui_Main):
