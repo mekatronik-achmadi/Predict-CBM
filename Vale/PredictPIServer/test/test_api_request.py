@@ -16,7 +16,9 @@ class TestValeAPI():
         self.server_root = '142.40.33.208'
 
         self.server_base = 'pti-pi'
-        self.x_tag = ['U-LGS1-GB-X-PK-PK-70-AI','U-LGS1-LGB-Y-PK-PK-340-AI','U-LGS1-TGB-X-PK-PK-270-AI','U-LGS1-TGB-Y-PK-PK-340-AI','U-LGS1-UGB-X-PK-PK-70-AI','U-LGS1-UGB-Y-PK-PK-340-AI']
+        self.x_tag = ['U-LGS1-GB-X-PK-PK-70-AI','U-LGS1-LGB-Y-PK-PK-340-AI',
+                      'U-LGS1-TGB-X-PK-PK-270-AI','U-LGS1-TGB-Y-PK-PK-340-AI',
+                      'U-LGS1-UGB-X-PK-PK-70-AI','U-LGS1-UGB-Y-PK-PK-340-AI']
 
         t = time.time()
 
