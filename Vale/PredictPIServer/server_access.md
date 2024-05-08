@@ -22,6 +22,24 @@ List Data Access:
 '{SERVER_ADDRESS}/points?path=\\\\{BASE_PATH}\{TAG_PATH}'
 ```
 
+- Record Streaming:
+
+```python
+'{SERVER_ADDRESS}/streams/{WEB_ID}/recorded'
+```
+
+- Record Streaming with a selected field:
+
+```python
+'{SERVER_ADDRESS}/streams/{WEB_ID}/recorded?selectedFields=Items.Value'
+```
+
+- Record Streaming with multiple selected fields:
+
+```python
+'{SERVER_ADDRESS}/streams/{WEB_ID}/recorded?selectedFields=Items.Timestamp;Items.Value'
+```
+
 ## Notes
 
 - Software Analysis -> VibroSight Vision
