@@ -41,8 +41,9 @@ Task List:
 - [ ] Python Class/Framework
     - [x] Integrate PI System
         - [x] Local PIWebAPI
-        - [ ] Azzure PIWebAPI
+        - [ ] AVD PIWebAPI
     - [ ] Integrate Data Analysis
+        - [ ] GUI Plotter/Viewer
     - [ ] Packaging/Deployment
         - [ ] Windows requirements
         - [ ] Self Contained Image
