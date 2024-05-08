@@ -1,6 +1,6 @@
 import pandas as pd
 
-pi_tag_list = pd.read_excel('PI_Tag_Resume.xlsx', sheet_name="pi_tag_list")
+pi_tag_list = pd.read_excel('PI_Tag_Resume.xlsx', sheet_name="pi_tag_list_update")
 json_str = pi_tag_list.to_json(orient='records')
 
 # Using a JSON string
