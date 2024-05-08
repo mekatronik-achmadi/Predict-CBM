@@ -7,6 +7,19 @@ import numpy
 
 from datetime import datetime
 
+## Date Time Utilities
+class ValeTime():
+
+    ## Constructor
+    def __init__(self):
+        super(ValeTime,self).__init__()
+
+    ## Time string to Timestamp string
+    # @param string A date time string like '2024-01-01 00:00:00'
+    def str2timestamp(self,str_in):
+        dt_object = datetime.strptime(str_in,'%Y-%m-%d %H:%M:%S')
+        return dt_object.strftime('%Y-%m-%dT%H:%M:%SZ')
+
 ## PIWebAPI request and Data Loading
 class ValeConnect():
 
@@ -21,6 +34,9 @@ class ValeConnect():
 
         # disable SSL warnings
         urllib3.disable_warnings()
+
+        # other class objects
+        self.dt = ValeTime()
 
     ## generic GET request
     # @param string URL to send GET
@@ -79,11 +95,34 @@ class ValeConnect():
 
         return val_dict
 
-    ## Get TimeStamp Value record from PI Server on specified Web Id
+    ## Get TimeStamp/Value record from PI Server on specified Web Id
     # @param string Wed Id
     # @return pandas Two-dimensional of timestamps (string) and values (float)
     def get_stream_rec_valuetime_pd(self,web_id):
         url = f'{self.SERV_PATH}/streams/{web_id}/recorded?selectedFields=Items.Timestamp;Items.Value'
+        val_list = self.api_get_request(url,'Items')
+        val_dict = {}
+
+        j = 0
+        for i in val_list:
+            # note the Z is parsing directive to %z as it is identifier to UTC timezone
+            val_new = {i.get('Timestamp'):i.get('Value')}
+            val_dict.update(val_new)
+            j = j + 1
+
+        val_df = pandas.DataFrame(list(val_dict.items()), columns=['Timestamps', 'Values'])
+        return val_df
+
+    ## Get TimeStamp/Value record from PI Server on specified Web Id
+    # @param string Wed Id
+    # @param list Start and End of time span string like ['2024-01-01 00:00:00','2024-01-01 10:00:00']
+    # @return pandas Two-dimensional of timestamps (string) and values (float)
+    def get_stream_rec_valuetimestamp_pd(self,web_id,time_span):
+        start_dt = self.dt.str2timestamp(time_span[0])
+        end_dt = self.dt.str2timestamp(time_span[1])
+
+        url = f'{self.SERV_PATH}/streams/{web_id}/recorded?startTime={start_dt}&endTime={end_dt}&selectedFields=Items.Timestamp;Items.Value'
+
         val_list = self.api_get_request(url,'Items')
         val_dict = {}
 

@@ -22,13 +22,18 @@ class TestValeAPI():
 
         self.conn = ValeConnect(self.server_root,self.server_base)
 
-        for i in self.x_tag:
-            x_tag_wid = self.conn.get_webid_point(i)
-            value_resp = self.conn.get_stream_rec_valuetime_pd(x_tag_wid)
+        # for i in self.x_tag:
+        #     x_tag_wid = self.conn.get_webid_point(i)
+        #     value_resp = self.conn.get_stream_rec_valuetime_pd(x_tag_wid)
 
-            print(value_resp)
-            print(type(value_resp['Timestamps'][1]))
-            print(type(value_resp['Values'][1]))
+        #     print(value_resp)
+        #     print(type(value_resp['Timestamps'][1]))
+        #     print(type(value_resp['Values'][1]))
+
+        x_tag_wid = self.conn.get_webid_point(self.x_tag[0])
+        time_list = ['2022-01-01 00:00:00','2022-01-01 01:00:00']
+        result = self.conn.get_stream_rec_valuetimestamp_pd(x_tag_wid,time_list)
+        print(result)
 
         elapsed = time.time() - t
         print(elapsed)
