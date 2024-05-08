@@ -89,7 +89,7 @@ class ValeConnect():
 
         j = 0
         for i in val_list:
-            val_new = {i.get('Timestamp'):i.get('Value')}
+            val_new = {i.get('Timestamp'):i.get('Value')} # DO NOT SWAP
             val_dict.update(val_new)
             j = j + 1
 
@@ -106,18 +106,18 @@ class ValeConnect():
         j = 0
         for i in val_list:
             # note the Z is parsing directive to %z as it is identifier to UTC timezone
-            val_new = {i.get('Timestamp'):i.get('Value')}
+            val_new = {i.get('Timestamp'):i.get('Value')} # DO NOT SWAP
             val_dict.update(val_new)
             j = j + 1
 
-        val_df = pandas.DataFrame(list(val_dict.items()), columns=['Timestamps', 'Values'])
+        val_df = pandas.DataFrame(list(val_dict.items()), columns=['Values','Timestamps'])
         return val_df
 
     ## Get TimeStamp/Value record from PI Server on specified Web Id
     # @param string Wed Id
     # @param list Start and End of time span string like ['2024-01-01 00:00:00','2024-01-01 10:00:00']
     # @return pandas Two-dimensional of timestamps (string) and values (float)
-    def get_stream_rec_valuetimestamp_pd(self,web_id,time_span):
+    def get_stream_rec_valuetimespan_pd(self,web_id,time_span):
         start_dt = self.dt.str2timestamp(time_span[0])
         end_dt = self.dt.str2timestamp(time_span[1])
 
@@ -129,9 +129,9 @@ class ValeConnect():
         j = 0
         for i in val_list:
             # note the Z is parsing directive to %z as it is identifier to UTC timezone
-            val_new = {i.get('Timestamp'):i.get('Value')}
+            val_new = {i.get('Timestamp'):i.get('Value')} # DO NOT SWAP
             val_dict.update(val_new)
             j = j + 1
 
-        val_df = pandas.DataFrame(list(val_dict.items()), columns=['Timestamps', 'Values'])
+        val_df = pandas.DataFrame(list(val_dict.items()), columns=['Values','Timestamps'])
         return val_df

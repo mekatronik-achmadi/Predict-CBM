@@ -47,7 +47,7 @@ class TestValeMain():
     def update_data(self):
         while True:
             print('Request New Data')
-            self.value_array = self.conn.get_stream_rec_json_value(self.x_tag_wid)
+            self.value_array = self.conn.get_stream_rec_value(self.x_tag_wid)
             print(self.value_array)
             sleep(1)
 

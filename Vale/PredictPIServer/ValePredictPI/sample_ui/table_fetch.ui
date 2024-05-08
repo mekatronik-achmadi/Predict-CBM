@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1024</width>
     <height>600</height>
    </rect>
   </property>
@@ -100,7 +100,7 @@
      <rect>
       <x>10</x>
       <y>110</y>
-      <width>771</width>
+      <width>1001</width>
       <height>431</height>
      </rect>
     </property>
@@ -114,7 +114,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>20</y>
+       <y>30</y>
        <width>181</width>
        <height>24</height>
       </rect>
@@ -126,8 +126,8 @@
     <widget class="QLineEdit" name="txtTagB">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>20</y>
+       <x>340</x>
+       <y>30</y>
        <width>181</width>
        <height>24</height>
       </rect>
@@ -139,8 +139,8 @@
     <widget class="QLineEdit" name="txtTagC">
      <property name="geometry">
       <rect>
-       <x>530</x>
-       <y>20</y>
+       <x>670</x>
+       <y>30</y>
        <width>181</width>
        <height>24</height>
       </rect>
@@ -154,7 +154,7 @@
       <rect>
        <x>10</x>
        <y>60</y>
-       <width>221</width>
+       <width>311</width>
        <height>361</height>
       </rect>
      </property>
@@ -162,9 +162,9 @@
     <widget class="QTableView" name="tblDataC">
      <property name="geometry">
       <rect>
-       <x>270</x>
+       <x>340</x>
        <y>60</y>
-       <width>221</width>
+       <width>311</width>
        <height>361</height>
       </rect>
      </property>
@@ -172,9 +172,9 @@
     <widget class="QTableView" name="tblDataB">
      <property name="geometry">
       <rect>
-       <x>530</x>
+       <x>670</x>
        <y>60</y>
-       <width>221</width>
+       <width>311</width>
        <height>361</height>
       </rect>
      </property>
@@ -186,7 +186,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1024</width>
      <height>22</height>
     </rect>
    </property>

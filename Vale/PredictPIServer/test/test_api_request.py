@@ -34,7 +34,7 @@ class TestValeAPI():
 
         x_tag_wid = self.conn.get_webid_point(self.x_tag[0])
         time_list = ['2022-01-01 00:00:00','2022-01-01 01:00:00']
-        result = self.conn.get_stream_rec_valuetimestamp_pd(x_tag_wid,time_list)
+        result = self.conn.get_stream_rec_valuetimespan_pd(x_tag_wid,time_list)
         print(result)
 
         elapsed = time.time() - t
