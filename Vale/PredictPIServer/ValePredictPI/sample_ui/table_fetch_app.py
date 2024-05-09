@@ -16,21 +16,32 @@ from pyqt_pandas_model import PandasModel
 
 from table_fetch_ui import Ui_MainGui
 from vale_connect import ValeConnect
+from vale_forecast import ValeArima
 
 class MainGui(QMainWindow,Ui_MainGui):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
+        self.tabMain.setCurrentIndex(0)
 
         self.tmrReqApi = QtCore.QTimer(self)
-        self.tmrReqApi.timeout.connect(self.update_table)
+        self.tmrReqApi.timeout.connect(self.update_all)
 
         self.setWindowFlags(QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowMinimizeButtonHint)
 
         self.conn = ValeConnect(self.txtDataServer.text(),self.txtDataBase.text())
-        self.tmrReqApi.start(1000)
+        self.arima = ValeArima()
 
-    def update_table(self):
+        self.tabMain.addTab(self.arima.add_plot(),'Forecast Plot')
+
+        self.tmrTestPlot = QtCore.QTimer(self)
+        self.tmrTestPlot.timeout.connect(self.update_plot)
+        self.tmrTestPlot.start(10)
+
+    def update_plot(self):
+        self.arima.test_plot()
+
+    def update_all(self):
         print("================")
 
         tags_list = [self.txtTagA, self.txtTagB, self.txtTagC]
@@ -43,6 +54,17 @@ class MainGui(QMainWindow,Ui_MainGui):
             table_list[i].resizeColumnsToContents()
 
         print('Updated')
+
+        df_in = self.conn.get_stream_rec_valuetime_pd(self.conn.get_webid_point(tags_list[0].text()))
+        self.arima.forecast(df_in)
+        self.arima.plotting(df_in)
+
+        print('Forecasted')
+
+    @pyqtSlot()
+    def on_btnServerStart_pressed(self):
+        print('Start Server')
+        #self.tmrReqApi.start(1000)
 
 if __name__ == "__main__":
     app = QWidgets.QApplication(sys.argv)

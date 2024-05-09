@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tbData">
      <attribute name="title">
@@ -196,11 +196,6 @@
        </property>
       </widget>
      </widget>
-    </widget>
-    <widget class="QWidget" name="tbPlot">
-     <attribute name="title">
-      <string>Plot</string>
-     </attribute>
     </widget>
    </widget>
   </widget>
