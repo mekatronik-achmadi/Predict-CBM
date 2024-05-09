@@ -14,8 +14,6 @@ for i in range(len(list_pa_data)):
     else:
         pa_data_df = pd.concat([pa_data_df, pa_data], ignore_index=True)
 
-print(pa_data_df)
-
 json_str = pa_data_df.to_json(orient='records')
 
 # Using a JSON string
