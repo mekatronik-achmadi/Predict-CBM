@@ -3,4 +3,5 @@ pandas
 urllib3
 requests
 PyQt5
+matplotlib
 pmdarima
