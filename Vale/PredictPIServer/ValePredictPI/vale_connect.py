@@ -62,10 +62,11 @@ class ValeConnect():
     # @param int Data amount
     # @return dict Raw server's response in JSON
     def get_stream_rec_json(self,web_id,cnt=200):
-        if cnt >= 2000:
+        int_cnt = int(cnt)
+        if int_cnt >= 2000:
             str_cnt = '2000'
         else:
-            str_cnt = str(cnt)
+            str_cnt = str(int_cnt)
 
         url = f'{self.SERV_PATH}/streams/{web_id}/recorded?maxCount={str_cnt}'
         return self.api_get_request(url)
@@ -75,10 +76,11 @@ class ValeConnect():
     # @param int Data amount
     # @return numpy One-dimensional Array of values
     def get_stream_rec_value(self,web_id,cnt=200):
-        if cnt >= 2000:
+        int_cnt = int(cnt)
+        if int_cnt >= 2000:
             str_cnt = '2000'
         else:
-            str_cnt = str(cnt)
+            str_cnt = str(int_cnt)
 
         url = f'{self.SERV_PATH}/streams/{web_id}/recorded?maxCount={str_cnt}&selectedFields=Items.Value'
         val_list = self.api_get_request(url,'Items')
@@ -96,10 +98,11 @@ class ValeConnect():
     # @param int Data amount
     # @return dict Two-dimensional of timestamps (string) and values (float)
     def get_stream_rec_valuetime_dict(self,web_id,cnt=200):
-        if cnt >= 2000:
+        int_cnt = int(cnt)
+        if int_cnt >= 2000:
             str_cnt = '2000'
         else:
-            str_cnt = str(cnt)
+            str_cnt = str(int_cnt)
 
         url = f'{self.SERV_PATH}/streams/{web_id}/recorded?maxCount={str_cnt}&selectedFields=Items.Timestamp;Items.Value'
         val_list = self.api_get_request(url,'Items')
@@ -118,10 +121,11 @@ class ValeConnect():
     # @param int Data amount
     # @return pandas Two-dimensional of timestamps (string) and values (float)
     def get_stream_rec_valuetime_pd(self,web_id,cnt=200):
-        if cnt >= 2000:
+        int_cnt = int(cnt)
+        if int_cnt >= 2000:
             str_cnt = '2000'
         else:
-            str_cnt = str(cnt)
+            str_cnt = str(int_cnt)
 
         url = f'{self.SERV_PATH}/streams/{web_id}/recorded?maxCount={str_cnt}&selectedFields=Items.Timestamp;Items.Value'
         val_list = self.api_get_request(url,'Items')
