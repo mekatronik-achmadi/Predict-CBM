@@ -138,7 +138,7 @@ class ValeConnect():
             val_dict.update(val_new)
             j = j + 1
 
-        val_df = pandas.DataFrame(list(val_dict.items()), columns=['Values','Timestamps'])
+        val_df = pandas.DataFrame(list(val_dict.items()), columns=['Timestamps','Values'])
         return val_df
 
     ## Get TimeStamp/Value record from PI Server on specified Web Id
@@ -161,5 +161,5 @@ class ValeConnect():
             val_dict.update(val_new)
             j = j + 1
 
-        val_df = pandas.DataFrame(list(val_dict.items()), columns=['Values','Timestamps'])
+        val_df = pandas.DataFrame(list(val_dict.items()), columns=['Timestamps','Values'])
         return val_df

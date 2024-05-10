@@ -80,4 +80,3 @@ class ValeArima():
         ax = self.plt_fig.add_subplot(111)
         ax.plot(data, '*-')
         self.plt_canvas.draw()
-

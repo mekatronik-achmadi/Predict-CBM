@@ -34,9 +34,9 @@ class MainGui(QMainWindow,Ui_MainGui):
 
         self.tabMain.addTab(self.arima.add_plot(),'Forecast Plot')
 
-        self.tmrTestPlot = QtCore.QTimer(self)
-        self.tmrTestPlot.timeout.connect(self.update_plot)
-        self.tmrTestPlot.start(10)
+        # self.tmrTestPlot = QtCore.QTimer(self)
+        # self.tmrTestPlot.timeout.connect(self.update_plot)
+        # self.tmrTestPlot.start(10)
 
     def update_plot(self):
         self.arima.test_plot()
@@ -64,7 +64,7 @@ class MainGui(QMainWindow,Ui_MainGui):
     @pyqtSlot()
     def on_btnServerStart_pressed(self):
         print('Start Server')
-        #self.tmrReqApi.start(1000)
+        self.tmrReqApi.start(1000)
 
 if __name__ == "__main__":
     app = QWidgets.QApplication(sys.argv)
