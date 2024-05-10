@@ -23,12 +23,15 @@ class ValeArima():
     # @details It will freeze the GUI if called directly
     # @param dataframe Pandas DataFrame from Server
     def forecast(self,df_data,periods=60):
+        # CLI Status
+        print('Forecasting')
+
         # model build
         arima_model = pm.auto_arima(df_data['Values'],
                                      start_p=1,
                                      start_q=1,
                                      test='adf',
-                                     m=12,
+                                     m=8,
                                      d=None,
                                      D=1,
                                      seasonal=True,
@@ -38,12 +41,25 @@ class ValeArima():
                                      stepwise=True)
 
         # predict data
-        self.fitted,self.confint = arima_model.predict(n_periods=periods,
-                                             return_conf_int=True)
+        self.fitted,self.confint = arima_model.predict(n_periods=periods,return_conf_int=True)
         self.index_of_fc = range(df_data.index[-1], df_data.index[-1] + periods, 1)
 
         # update plotting
-        self.plotting()
+        fitted_series = pd.Series(self.fitted, index=self.index_of_fc)
+        lower_series = pd.Series(self.confint[:, 0], index=self.index_of_fc)
+        upper_series = pd.Series(self.confint[:, 1], index=self.index_of_fc)
+
+        self.plt_fig.clear()
+
+        ax = self.plt_fig.add_subplot(111)
+        ax.plot(df_data["Values"], color='#1f76b4')
+        ax.plot(fitted_series, color='darkgreen')
+        ax.fill_between(lower_series.index,
+                    lower_series,
+                    upper_series,
+                    color='k', alpha=.15)
+
+        self.plt_canvas.draw()
 
         # CLI Status
         print('Forecasted')
