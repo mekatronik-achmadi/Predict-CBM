@@ -9,6 +9,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
 import random
+import threading
 
 ## Linear Predictor using ARIMA method
 class ValeArima():
@@ -16,10 +17,13 @@ class ValeArima():
     ## Constructor
     def __init__(self):
         super(ValeArima,self).__init__()
+        self.thd_is_run = False
 
     ## Build Forecasting using ARIMA Model
+    # @details It will freeze the GUI if called directly
     # @param dataframe Pandas DataFrame from Server
     def forecast(self,df_data,periods=60):
+        # model build
         arima_model = pm.auto_arima(df_data['Values'],
                                      start_p=1,
                                      start_q=1,
@@ -33,9 +37,27 @@ class ValeArima():
                                      suppress_warnings=True,
                                      stepwise=True)
 
+        # predict data
         self.fitted,self.confint = arima_model.predict(n_periods=periods,
                                              return_conf_int=True)
         self.index_of_fc = range(df_data.index[-1], df_data.index[-1] + periods, 1)
+
+        # update plotting
+        self.plotting()
+
+        # CLI Status
+        print('Forecasted')
+
+        # available for next forecasting
+        self.thd_is_run = False
+
+    ## Build Forecasting using ARIMA Model
+    # @details It will freeze the GUI if called directly
+    # @param dataframe Pandas DataFrame from Server
+    def forecast_thd(self,df_data,periods=60):
+        if not self.thd_is_run:
+            self.thd_is_run = True
+            threading.Thread(target=self.forecast, args=(df_data,periods)).start()
 
     ## Add Plot Widget
     # @return qwidget Plot container as QWidget
