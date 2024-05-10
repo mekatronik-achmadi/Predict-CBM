@@ -32,6 +32,7 @@ class MainGui(QMainWindow,Ui_MainGui):
         self.conn = ValeConnect(self.txtDataServer.text(),self.txtDataBase.text())
 
         self.arima = ValeArima()
+        self.fore_run = False
         self.tabMain.addTab(self.arima.add_plot(),'Forecast Plot')
 
         # self.tmrTestPlot = QtCore.QTimer(self)
@@ -56,12 +57,18 @@ class MainGui(QMainWindow,Ui_MainGui):
         print('Updated')
 
         df_in = self.conn.get_stream_rec_valuetime_pd(self.conn.get_webid_point(tags_list[0].text()))
-        self.arima.forecast_thd(df_in)
+        if self.fore_run:
+            self.arima.forecast_thd(df_in)
 
     @pyqtSlot()
     def on_btnServerStart_pressed(self):
         print('Start Server')
         self.tmrReqApi.start(1000)
+
+    @pyqtSlot()
+    def on_btnForeStart_pressed(self):
+        print('Forecasting Enabled')
+        self.fore_run = True
 
 if __name__ == "__main__":
     app = QWidgets.QApplication(sys.argv)
