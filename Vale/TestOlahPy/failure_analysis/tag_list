@@ -1,0 +1,57 @@
+analyzed parameter for failure mode analysis
+
+power output
+1. Active power (U-LGS1-Active-Power-AI)
+2. Grid Selection (U-LGS1-N75-15-0-AI)
+3. Reactive power (U-LGS1-Reactive-Power-AI)
+4. Power factor (U-LGS1-PF-81104-AI)
+5. Frequency (U-LGS1-SI_81155_MV-AI)
+
+vibration
+1. Governor speed actual (U-LGS1-SI-81101-AI)
+2. UGB X (U-LGS1-UGB-X-PK-PK-70-AI)
+3. UGB Y (U-LGS1-UGB-Y-PK-PK-340-AI)
+4. LGB X (U-LGS1-GB-X-PK-PK-70-AI)
+5. LGB Y (U-LGS1-LGB-Y-PK-PK-340-AI)
+6. TGB X (U-LGS1-TGB-X-PK-PK-270-AI)
+7. TGB Y (U-LGS1-TGB-Y-PK-PK-340-AI)
+
+flow
+1. Penstock flow (U-LGS1-FI-81101-AI)
+2. Turbine flow (U-LGS1-FIT-431-AI)
+3. Generator cooling water flow (U-LGS1-FIT-81103C-AI)
+4. UGB cooling water flow (U-LGS1-FIT-81103A-AI)
+5. LGB cooling water flow (U-LGS1-FIT-81103B-AI)
+
+pressure
+1. Penstock pressure (U-LGS1-PT-81150-AI)
+
+temperature
+1. Stator winding temp 13 (U-LGS1-TI-81104A-AI)
+2. Stator winding temp 14 (U-LGS1-TI-81104B-AI)
+3. Stator winding temp 15 (U-LGS1-TI-81104C-AI)
+4. Stator core temp 12 (U-LGS1-TI-81104G-AI)
+5. UGB Metal Temp (U-LGS1-TI-81104H-AI)
+6. UGB Oil Temp (U-LGS1-TI-81104I-AI)
+7. LGB Metal Temp (U-LGS1-TI-81104J-AI)
+8. LGB Oil Temp (U-LGS1-TI-81104L-AI)
+9. Generator Air Cooler - Air Outlet Temp (U-LGS1-TI-81104D-AI)
+10. Generator Air Cooler - Water Inlet Temp (U-LGS1-TI-81104E-AI)
+11. Generator Air Cooler - Water Outlet Temp (U-LGS1-TI-81104F-AI)
+
+efficiency
+1. Efficiency LGS (U-LGS1-Efficiency-AI)
+
+level
+1. Lower canal level (U-LCNL-Lower-Canal-Lvl-AI)
+2. Tail race level (U-LGS-TailRaceLevel-AI)
+3. Wicked gate position (U-LGS1-ZT-81101-AI)
+
+set point parameter
+1. LGS1 Turb Gov Speed Setpoint (U-LGS1-SSP-81101B-AI)
+2. LGS1 Turb Gov Opening Setpoint (U-LGS1-ZSP-81101C-AI)
+3. LGS1 Governor MW Setpoint Point (U-LGS1-JSP-81101A-AI)
+4. LGS1 Turb Gov Active Power Setpoint (U-LGS1-JSP-81101B-AI)
+5. LGS1 Turb Gov Speed Setpoint (U-LGS1-SSP-81101B-AI)
+6. LGS1 Active Power Setpoint (U-LGS1-ACTIVE_PWR_SETP)
+
